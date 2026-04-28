@@ -1,0 +1,30 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 20
+    commands:
+      - npm ci
+
+  build:
+    commands:
+      - npm run build
+
+  post_build:
+    commands:
+      # Sync hashed assets (_next/static/) with long-lived cache
+      - aws s3 sync out/_next/ s3://$S3_BUCKET/_next/
+          --delete
+          --cache-control "public,max-age=31536000,immutable"
+
+      # Sync HTML and root files with no-cache so updates are instant
+      - aws s3 sync out/ s3://$S3_BUCKET/
+          --delete
+          --exclude "_next/*"
+          --cache-control "public,max-age=0,must-revalidate"
+
+      # Invalidate CloudFront so visitors get fresh HTML immediately
+      - aws cloudfront create-invalidation
+          --distribution-id $CF_DISTRIBUTION_ID
+          --paths "/*"
