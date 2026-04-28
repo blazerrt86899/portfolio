@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Romu Tiwari — Portfolio
+
+Personal portfolio site for Romu Tiwari, DevOps-turned-Agentic AI Engineer.
+
+## Stack
+
+- [Next.js 16](https://nextjs.org/) (App Router, static export)
+- [Tailwind CSS v4](https://tailwindcss.com/)
+- [next-themes](https://github.com/pacocoursey/next-themes) — dark/light toggle
+- [lucide-react](https://lucide.dev/) — icons
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+Outputs a production build to `.next/`.
 
-To learn more about Next.js, take a look at the following resources:
+## Sections
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Hero** — name, role, stats, CTAs
+- **About** — bio + terminal code window
+- **Projects** — Opentrace, APN Classifier, Zendesk Agent
+- **Experience** — CloudKeeper, Publicis Sapient, Torry Harris, Cognizant
+- **Skills** — 7 categories: AI/ML, Backend, Frontend, Databases, Cloud, DevOps, Docs
+- **Certifications** — GCP ACE, CKA, HashiCorp Terraform
+- **Blogs** — 3 posts on agentic AI and RAG
+- **Contact** — email, phone, LinkedIn, GitHub
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Theme
 
-## Deploy on Vercel
+Uses CSS custom properties (`var(--bg)`, `var(--accent)`, etc.) with a `.dark` class on `<html>` for dark/light switching — no Tailwind `dark:` prefix needed.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Intended for AWS (S3 + CloudFront or ECS). Set `output: 'export'` in `next.config.ts` for static export before deploying to S3.
