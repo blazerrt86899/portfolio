@@ -49,7 +49,7 @@ export default function Hero() {
         </div>
 
         {/* Name */}
-        <h1 className="text-6xl md:text-8xl font-bold tracking-tight leading-none mb-5">
+        <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold tracking-tight leading-none mb-5">
           <span style={{ color: 'var(--text-1)' }} className="block">Romu</span>
           <span className="block bg-gradient-to-r from-green-500 to-emerald-400 bg-clip-text text-transparent">
             Tiwari

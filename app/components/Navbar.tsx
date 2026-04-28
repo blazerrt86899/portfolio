@@ -54,7 +54,7 @@ export default function Navbar() {
         <button
           aria-label="Toggle theme"
           onClick={() => setTheme(isDark ? 'light' : 'dark')}
-          className="w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-[12px] transition-colors duration-300 hover:text-[var(--accent)]"
+          className="w-11 h-11 rounded-full flex items-center justify-center backdrop-blur-[12px] transition-colors duration-300 hover:text-[var(--accent)]"
           style={{ color: 'var(--text-2)', ...pillStyle }}
         >
           {mounted ? (isDark ? <Sun size={16} /> : <Moon size={16} />) : <span className="w-4 h-4" />}
@@ -106,7 +106,7 @@ export default function Navbar() {
           <button
             aria-label="Toggle menu"
             onClick={() => setMobileOpen(prev => !prev)}
-            className="md:hidden w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-[12px] transition-colors duration-300 hover:text-[var(--text-1)]"
+            className="md:hidden w-11 h-11 rounded-full flex items-center justify-center backdrop-blur-[12px] transition-colors duration-300 hover:text-[var(--text-1)]"
             style={{ color: 'var(--text-2)', ...pillStyle }}
           >
             {mobileOpen ? <X size={18} /> : <Menu size={18} />}

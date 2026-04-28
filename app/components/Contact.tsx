@@ -80,10 +80,10 @@ export default function Contact() {
                 >
                   <ContactIcon type={icon} />
                 </div>
-                <div>
+                <div className="min-w-0 flex-1">
                   <div className="text-xs" style={{ color: 'var(--text-3)' }}>{label}</div>
                   <div
-                    className="text-sm font-medium group-hover:text-[var(--accent)] transition-colors"
+                    className="text-sm font-medium group-hover:text-[var(--accent)] transition-colors truncate"
                     style={{ color: 'var(--text-1)' }}
                   >
                     {value}
